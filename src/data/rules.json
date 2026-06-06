@@ -1,0 +1,62 @@
+{
+  "source_baseline": "TTS Castle Wars by stom66/searanger, based on m0rkeulv Castle Wars; mechanics transcribed for design/implementation reference only.",
+  "players": 2,
+  "turn_order": "randomly Blue or Red in source; for automated tests use deterministic seed.",
+  "initial_stats_original": {
+    "builders": 2,
+    "bricks": 5,
+    "mages": 2,
+    "crystals": 5,
+    "soldiers": 2,
+    "swords": 5,
+    "castle": 30,
+    "wall": 10
+  },
+  "initial_stats_retheme": {
+    "law_circles": 2,
+    "law_mana": 5,
+    "neutral_circles": 2,
+    "neutral_mana": 5,
+    "chaos_circles": 2,
+    "chaos_mana": 5,
+    "citadel": 30,
+    "ward": 10
+  },
+  "win_conditions": [
+    "Own castle/citadel reaches 100 or more",
+    "Opponent castle/citadel reaches 0 or less"
+  ],
+  "hand_size": 8,
+  "turn_actions": {
+    "play_cards_per_turn": 1,
+    "discard_cards_per_turn_max": 3,
+    "can_play_after_discard": false,
+    "can_discard_after_play": false,
+    "manual_end_turn_allowed": true
+  },
+  "resource_generation": {
+    "timing": "start_of_turn",
+    "first_two_turns_generate_resources": false,
+    "amount": "each worker/circle produces one matching resource unless production buff changes it"
+  },
+  "deck_constraints": {
+    "min_cards": 50,
+    "max_cards": 280,
+    "max_copies_per_card": 5
+  },
+  "damage_rules": {
+    "normal": "damage hits wall/ward first; overflow damages castle/citadel",
+    "bypass": "damage ignores wall/ward and hits castle/citadel",
+    "magic_defence": "next attack deals 0 damage and consumes defence buff before wall/castle resolution"
+  },
+  "buffs": {
+    "attack": "Double next outgoing attack damage, then consume.",
+    "build": "Double next castle or wall construction amount, then consume.",
+    "defence": "Negate all damage from next incoming attack, then consume.",
+    "resources": "Block next remove-resource effect, then consume."
+  },
+  "source_code_quirks_to_decide": [
+    "Thief in source adds resources to current player before attempting to remove from opponent; if opponent has Protect Resources, opponent may keep resources while thief still gains them.",
+    "Reverse has a wall cost of 4 but player affordability ignores wall costs; playing with <4 wall sets wall to 0 and still raises castle."
+  ]
+}

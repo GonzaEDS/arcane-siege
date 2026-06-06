@@ -1,0 +1,62 @@
+[
+  {
+    "topic": "Castle Wars TTS wiki home",
+    "url": "https://stom66.github.io/tts-castle-wars/",
+    "notes": "Official project wiki states TTS Castle Wars includes quick start, rules, UI/table/card info."
+  },
+  {
+    "topic": "Castle Wars quick start",
+    "url": "https://stom66.github.io/tts-castle-wars/quickstart",
+    "notes": "Two players, win conditions, turn structure, workers/resources, deck validation summary."
+  },
+  {
+    "topic": "Castle Wars cards page",
+    "url": "https://stom66.github.io/tts-castle-wars/the-cards",
+    "notes": "Human-readable card list and descriptions."
+  },
+  {
+    "topic": "Castle Wars source cardData.lua",
+    "url": "https://raw.githubusercontent.com/stom66/tts-castle-wars/master/Assets/lua-xml/cardData.lua",
+    "notes": "Exact card costs/actions/values/delays/bypass fields used in data file."
+  },
+  {
+    "topic": "Castle Wars source playerData.lua",
+    "url": "https://github.com/stom66/tts-castle-wars/blob/master/Assets/lua-xml/playerData.lua",
+    "notes": "Exact initial stats."
+  },
+  {
+    "topic": "Castle Wars source _global.lua",
+    "url": "https://raw.githubusercontent.com/stom66/tts-castle-wars/master/Assets/lua-xml/_global.lua",
+    "notes": "Hand size, deck limits, duplicate limits, discard limit."
+  },
+  {
+    "topic": "Castle Wars source deckData.lua",
+    "url": "https://raw.githubusercontent.com/stom66/tts-castle-wars/master/Assets/lua-xml/deckData.lua",
+    "notes": "Preset deck counts."
+  },
+  {
+    "topic": "Castle Wars source cardActions.lua",
+    "url": "https://raw.githubusercontent.com/stom66/tts-castle-wars/master/Assets/lua-xml/cardActions.lua",
+    "notes": "Effect resolution and buffs."
+  },
+  {
+    "topic": "Castle Wars source turnActions.lua",
+    "url": "https://raw.githubusercontent.com/stom66/tts-castle-wars/master/Assets/lua-xml/turnActions.lua",
+    "notes": "Turn start/end, resource generation and replacement draws."
+  },
+  {
+    "topic": "Magic & Mayhem overview",
+    "url": "https://en.wikipedia.org/wiki/Magic_and_Mayhem",
+    "notes": "Developer/publisher, gameplay pillars, realms, Portmanteau/talisman spell system, claymation identity."
+  },
+  {
+    "topic": "Magic & Mayhem GameFAQs guide",
+    "url": "https://gamefaqs.gamespot.com/pc/143328-magic-and-mayhem/faqs/11454",
+    "notes": "Spell list and first-island creature list."
+  },
+  {
+    "topic": "Collection Chamber review",
+    "url": "https://collectionchamber.blogspot.com/p/magic-mayhem.html",
+    "notes": "Portmanteau/talisman examples and visual/aesthetic notes."
+  }
+]

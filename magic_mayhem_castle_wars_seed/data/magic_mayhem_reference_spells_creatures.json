@@ -1,0 +1,70 @@
+{
+  "core_pillars": [
+    "Wizard duel fantasy with creature summoning and spellcasting.",
+    "Mana economy tied to Places of Power and mana sprites.",
+    "Portmanteau spell-box: ingredients combine with Law, Neutral, or Chaos talismans to create spells.",
+    "Realms: Avalon, Greece, Albion; associated with Celtic, Greek, and Arthurian motifs.",
+    "Distinctive stop-motion/claymation creature/cutscene identity; do not copy assets, translate into original low-fi clay/idol-inspired card art."
+  ],
+  "spells_observed": [
+    "Unsummon",
+    "Fireball",
+    "Magic Sphere",
+    "Tangle Vine",
+    "Cure",
+    "Levitate",
+    "Gorgon Stare",
+    "Iron Skin",
+    "Storm",
+    "Bloodlust",
+    "Raise Dead",
+    "Lightning",
+    "Pestilence",
+    "Excalibur",
+    "Fountain of Life",
+    "Judgement"
+  ],
+  "creatures_observed_first_island": [
+    "Redcap",
+    "Brownie",
+    "Crocodile",
+    "Troll",
+    "Giant Bat",
+    "Hellhound",
+    "Unicorn",
+    "Faun",
+    "Elf",
+    "Zombie",
+    "Phoenix",
+    "Skeleton",
+    "Wraith",
+    "Basilisk"
+  ],
+  "additional_names_from_walkthrough_snippets_to_verify": [
+    "Centaur",
+    "Manticore",
+    "Gooey Blob",
+    "Grail Knights",
+    "Dragon of Colchis"
+  ],
+  "ingredients_or_artifacts_observed": [
+    "Brimstone",
+    "Clover",
+    "Zircon",
+    "Tincal",
+    "Hemlock",
+    "Laurel",
+    "Alectorius",
+    "Galactides",
+    "Bloodstone",
+    "Valerian",
+    "Phosphorus",
+    "Belladonna",
+    "Mandrake",
+    "Holly",
+    "Seven League Boots",
+    "Grail",
+    "Golden Fleece"
+  ],
+  "source_notes": "Use names as research anchors and placeholders. Verify against manual/game files before claiming completeness."
+}

@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Normal damage hits ward first",
+    "given": {
+      "opponent_ward": 10,
+      "opponent_citadel": 30
+    },
+    "when": "Redcap Dart deals 2 normal damage",
+    "expect": {
+      "opponent_ward": 8,
+      "opponent_citadel": 30
+    }
+  },
+  {
+    "name": "Overflow damage spills into citadel",
+    "given": {
+      "opponent_ward": 3,
+      "opponent_citadel": 30
+    },
+    "when": "Troll Ram deals 9 normal damage",
+    "expect": {
+      "opponent_ward": 0,
+      "opponent_citadel": 24
+    }
+  },
+  {
+    "name": "Bypass damage ignores ward",
+    "given": {
+      "opponent_ward": 20,
+      "opponent_citadel": 30
+    },
+    "when": "Giant Bat Ambush deals 15 bypass damage",
+    "expect": {
+      "opponent_ward": 20,
+      "opponent_citadel": 15
+    }
+  },
+  {
+    "name": "Attack buff doubles next attack only",
+    "given": {
+      "self_buff_attack": true,
+      "opponent_ward": 0,
+      "opponent_citadel": 40
+    },
+    "when": "Lightning deals 22",
+    "expect": {
+      "opponent_citadel": 0,
+      "self_buff_attack": false
+    }
+  },
+  {
+    "name": "Build buff doubles next build only",
+    "given": {
+      "self_buff_build": true,
+      "self_citadel": 30
+    },
+    "when": "Wizard’s Hut raises citadel by 5",
+    "expect": {
+      "self_citadel": 40,
+      "self_buff_build": false
+    }
+  },
+  {
+    "name": "Defence negates incoming attack",
+    "given": {
+      "self_buff_defence": true,
+      "self_ward": 0,
+      "self_citadel": 30
+    },
+    "when": "opponent Colchis Dragon attacks for 38",
+    "expect": {
+      "self_citadel": 30,
+      "self_buff_defence": false
+    }
+  },
+  {
+    "name": "Reverse can be played with less than 4 ward",
+    "given": {
+      "self_law_mana": 3,
+      "self_ward": 2,
+      "self_citadel": 30
+    },
+    "when": "Reverse the Wards",
+    "expect": {
+      "self_law_mana": 0,
+      "self_ward": 0,
+      "self_citadel": 38
+    }
+  },
+  {
+    "name": "Win by reaching 100 citadel",
+    "given": {
+      "self_citadel": 90
+    },
+    "when": "Merlin’s Tower adds 10",
+    "expect": {
+      "winner": "self"
+    }
+  },
+  {
+    "name": "Lose when citadel reaches zero",
+    "given": {
+      "self_citadel": 10,
+      "self_ward": 0
+    },
+    "when": "opponent Troll Ram deals 9 then Redcap Dart deals 2",
+    "expect": {
+      "self_citadel": 0,
+      "winner": "opponent"
+    }
+  }
+]

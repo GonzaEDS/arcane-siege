@@ -1,0 +1,14 @@
+{
+  "seed_name": "magic_mayhem_castle_wars_seed",
+  "created_for": "Cursor/Claude Opus programming agent",
+  "card_count": 56,
+  "deck_preset_count": 7,
+  "canonical_files": [
+    "data/castle_wars_rules.json",
+    "data/cards_v1_exact_mechanics_rethemed.json",
+    "data/deck_presets_v1.json",
+    "technical/EFFECT_GRAMMAR.md",
+    "technical/STATE_MACHINE.md",
+    "prompts/CURSOR_MASTER_PROMPT.md"
+  ]
+}

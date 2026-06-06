@@ -1,0 +1,20 @@
+{
+  "working_title": "Arcane Siege: Portmanteau Duels",
+  "source_to_retheme_terms": {
+    "Castle": "Citadel",
+    "Wall": "Ward",
+    "Builders": "Law Circles",
+    "Bricks": "Law Mana",
+    "Mages": "Neutral Circles",
+    "Crystals": "Neutral Mana",
+    "Soldiers/Recruits": "Chaos Circles",
+    "Swords/Weapons": "Chaos Mana",
+    "Deck": "Portmanteau",
+    "Cards": "Talismans / Summons / Incantations",
+    "Blue/Red players": "Wizards",
+    "Play Zone": "Casting Circle",
+    "Hand Zone": "Prepared Spells",
+    "Discard Zone": "Return to Portmanteau"
+  },
+  "rules": "This glossary changes presentation only. Numeric costs/effects stay exact until balance work is explicitly authorized."
+}

@@ -1,0 +1,1868 @@
+[
+  {
+    "id": "148900",
+    "source_name": "Add Bricks",
+    "retheme_name": "Gather Law Mana",
+    "magic_mayhem_reference": "Brimstone Ledger",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 5,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 5,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "addResource",
+    "value": [
+      8,
+      0,
+      0
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_resource",
+        "target": "self",
+        "amount": {
+          "law": 8,
+          "neutral": 0,
+          "chaos": 0
+        }
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148901",
+    "source_name": "Add Crystals",
+    "retheme_name": "Gather Neutral Mana",
+    "magic_mayhem_reference": "Clover Distillation",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 5,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 5,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "addResource",
+    "value": [
+      0,
+      8,
+      0
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_resource",
+        "target": "self",
+        "amount": {
+          "law": 0,
+          "neutral": 8,
+          "chaos": 0
+        }
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148902",
+    "source_name": "Add Weapons",
+    "retheme_name": "Gather Chaos Mana",
+    "magic_mayhem_reference": "Mandrake War-Cache",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 5,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 5,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "addResource",
+    "value": [
+      0,
+      0,
+      8
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_resource",
+        "target": "self",
+        "amount": {
+          "law": 0,
+          "neutral": 0,
+          "chaos": 8
+        }
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149100",
+    "source_name": "All Bricks",
+    "retheme_name": "Align All to Law",
+    "magic_mayhem_reference": "Law talisman alignment",
+    "cost_original": {
+      "bricks": 1,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 1,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "allProduce",
+    "value": "bricks",
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "set_next_production",
+        "target": "self",
+        "mode": "bricks"
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148903",
+    "source_name": "All Crystals",
+    "retheme_name": "Align All to Neutrality",
+    "magic_mayhem_reference": "Neutral talisman alignment",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 1,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 1,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "allProduce",
+    "value": "crystals",
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "set_next_production",
+        "target": "self",
+        "mode": "crystals"
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149000",
+    "source_name": "All Weapons",
+    "retheme_name": "Align All to Chaos",
+    "magic_mayhem_reference": "Chaos talisman alignment",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 1,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 1,
+      "ward_level": 0
+    },
+    "action": "allProduce",
+    "value": "swords",
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "set_next_production",
+        "target": "self",
+        "mode": "swords"
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149001",
+    "source_name": "Ambush",
+    "retheme_name": "Giant Bat Ambush",
+    "magic_mayhem_reference": "Giant Bat",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 20,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 20,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 15,
+    "bypass_wall": true,
+    "delay_seconds": 6.0,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 15,
+        "bypass_wall": true,
+        "delay_seconds": 6.0
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149002",
+    "source_name": "Archer",
+    "retheme_name": "Redcap Dart",
+    "magic_mayhem_reference": "Redcap",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 1,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 1,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 2,
+    "bypass_wall": false,
+    "delay_seconds": 1.8,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 2,
+        "bypass_wall": false,
+        "delay_seconds": 1.8
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149101",
+    "source_name": "Babylon",
+    "retheme_name": "Raise the Camelot Citadel",
+    "magic_mayhem_reference": "Albion/Camelot",
+    "cost_original": {
+      "bricks": 28,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 28,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "buildCastle",
+    "value": 30,
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "raise_castle",
+        "target": "self",
+        "amount": 30,
+        "uses_build_buff": true,
+        "delay_seconds": 0
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149102",
+    "source_name": "Battering Ram",
+    "retheme_name": "Troll Ram",
+    "magic_mayhem_reference": "Troll",
+    "cost_original": {
+      "bricks": 7,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 7,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 9,
+    "bypass_wall": false,
+    "delay_seconds": 4.75,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 9,
+        "bypass_wall": false,
+        "delay_seconds": 4.75
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149003",
+    "source_name": "Bomb",
+    "retheme_name": "Brimstone Burst",
+    "magic_mayhem_reference": "Brimstone",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 14,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 14,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 18,
+    "bypass_wall": false,
+    "delay_seconds": 2.75,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 18,
+        "bypass_wall": false,
+        "delay_seconds": 2.75
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149103",
+    "source_name": "Bribe Builder",
+    "retheme_name": "Subvert Law Circle",
+    "magic_mayhem_reference": "Subversion",
+    "cost_original": {
+      "bricks": 22,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 22,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "stealWorker",
+    "value": [
+      1,
+      0,
+      0
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "steal_worker",
+        "from": "opponent",
+        "to": "self",
+        "amount": {
+          "law_circle": 1,
+          "neutral_circle": 0,
+          "chaos_circle": 0
+        },
+        "opponent_min_each": 1
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148904",
+    "source_name": "Bribe Mage",
+    "retheme_name": "Subvert Neutral Circle",
+    "magic_mayhem_reference": "Subversion",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 22,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 22,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "stealWorker",
+    "value": [
+      0,
+      1,
+      0
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "steal_worker",
+        "from": "opponent",
+        "to": "self",
+        "amount": {
+          "law_circle": 0,
+          "neutral_circle": 1,
+          "chaos_circle": 0
+        },
+        "opponent_min_each": 1
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149004",
+    "source_name": "Bribe Recruit",
+    "retheme_name": "Subvert Chaos Circle",
+    "magic_mayhem_reference": "Subversion",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 22,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 22,
+      "ward_level": 0
+    },
+    "action": "stealWorker",
+    "value": [
+      0,
+      0,
+      1
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "steal_worker",
+        "from": "opponent",
+        "to": "self",
+        "amount": {
+          "law_circle": 0,
+          "neutral_circle": 0,
+          "chaos_circle": 1
+        },
+        "opponent_min_each": 1
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149104",
+    "source_name": "Builder",
+    "retheme_name": "Bind Law Circle",
+    "magic_mayhem_reference": "Place of Power",
+    "cost_original": {
+      "bricks": 8,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 8,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "addWorker",
+    "value": [
+      1,
+      0,
+      0
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_worker",
+        "target": "self",
+        "amount": {
+          "law_circle": 1,
+          "neutral_circle": 0,
+          "chaos_circle": 0
+        }
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149005",
+    "source_name": "Cannon",
+    "retheme_name": "Manticore Volley",
+    "magic_mayhem_reference": "Manticore / Chaos",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 16,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 16,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 20,
+    "bypass_wall": false,
+    "delay_seconds": 1.25,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 20,
+        "bypass_wall": false,
+        "delay_seconds": 1.25
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149105",
+    "source_name": "Catapult",
+    "retheme_name": "Brownie Stone-Cast",
+    "magic_mayhem_reference": "Brownie",
+    "cost_original": {
+      "bricks": 10,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 10,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 12,
+    "bypass_wall": false,
+    "delay_seconds": 1.325,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 12,
+        "bypass_wall": false,
+        "delay_seconds": 1.325
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149200",
+    "source_name": "Comet Strike",
+    "retheme_name": "Judgement Star",
+    "magic_mayhem_reference": "Judgement",
+    "cost_original": {
+      "bricks": 20,
+      "crystals": 10,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 20,
+      "neutral_mana": 10,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 30,
+    "bypass_wall": false,
+    "delay_seconds": 3.0,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 30,
+        "bypass_wall": false,
+        "delay_seconds": 3.0
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148905",
+    "source_name": "Conjure Wall",
+    "retheme_name": "Tangle Vine Ward",
+    "magic_mayhem_reference": "Tangle Vine",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 14,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 14,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "buildWall",
+    "value": 20,
+    "bypass_wall": true,
+    "delay_seconds": 2,
+    "effects": [
+      {
+        "op": "raise_wall",
+        "target": "self",
+        "amount": 20,
+        "uses_build_buff": true,
+        "bypass_animation": true,
+        "delay_seconds": 2
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149201",
+    "source_name": "Curse",
+    "retheme_name": "Overlord’s Curse",
+    "magic_mayhem_reference": "Overlord / Curse",
+    "cost_original": {
+      "bricks": 18,
+      "crystals": 18,
+      "swords": 18,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 18,
+      "neutral_mana": 18,
+      "chaos_mana": 18,
+      "ward_level": 0
+    },
+    "action": "curse",
+    "value": 0,
+    "bypass_wall": true,
+    "delay_seconds": 2,
+    "effects": [
+      {
+        "op": "curse",
+        "target": "opponent",
+        "description": "Steal 1 of each worker type if possible, steal 1 of each resource, add +1 castle and +1 wall to self, deal 1 direct castle damage and 1 normal damage to opponent."
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149202",
+    "source_name": "Dispel",
+    "retheme_name": "Unsummon Hexes",
+    "magic_mayhem_reference": "Unsummon",
+    "cost_original": {
+      "bricks": 2,
+      "crystals": 2,
+      "swords": 2,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 2,
+      "neutral_mana": 2,
+      "chaos_mana": 2,
+      "ward_level": 0
+    },
+    "action": "removeBuff",
+    "value": "all",
+    "bypass_wall": false,
+    "delay_seconds": 3.5,
+    "effects": [
+      {
+        "op": "remove_buffs",
+        "target": "opponent",
+        "mode": "all"
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149203",
+    "source_name": "Dragon",
+    "retheme_name": "Colchis Dragon",
+    "magic_mayhem_reference": "Dragon of Colchis",
+    "cost_original": {
+      "bricks": 20,
+      "crystals": 20,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 20,
+      "neutral_mana": 20,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 38,
+    "bypass_wall": false,
+    "delay_seconds": 6.25,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 38,
+        "bypass_wall": false,
+        "delay_seconds": 6.25
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149106",
+    "source_name": "Fence",
+    "retheme_name": "Brownie Barricade",
+    "magic_mayhem_reference": "Brownie",
+    "cost_original": {
+      "bricks": 5,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 5,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "buildWall",
+    "value": 9,
+    "bypass_wall": false,
+    "delay_seconds": 1,
+    "effects": [
+      {
+        "op": "raise_wall",
+        "target": "self",
+        "amount": 9,
+        "uses_build_buff": true,
+        "bypass_animation": false,
+        "delay_seconds": 1
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149006",
+    "source_name": "Fire Archer",
+    "retheme_name": "Elf Fire Arrow",
+    "magic_mayhem_reference": "Elf",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 3,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 3,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 5,
+    "bypass_wall": false,
+    "delay_seconds": 2.1,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 5,
+        "bypass_wall": false,
+        "delay_seconds": 2.1
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149204",
+    "source_name": "Giant Snowball",
+    "retheme_name": "Hailstone Familiar",
+    "magic_mayhem_reference": "Storm / Hail",
+    "cost_original": {
+      "bricks": 6,
+      "crystals": 6,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 6,
+      "neutral_mana": 6,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 12,
+    "bypass_wall": false,
+    "delay_seconds": 1.75,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 12,
+        "bypass_wall": false,
+        "delay_seconds": 1.75
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149007",
+    "source_name": "Guards",
+    "retheme_name": "Grail Knight Guard",
+    "magic_mayhem_reference": "Grail Knights",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 7,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 7,
+      "ward_level": 0
+    },
+    "action": "buildWall",
+    "value": 12,
+    "bypass_wall": true,
+    "delay_seconds": 0.75,
+    "effects": [
+      {
+        "op": "raise_wall",
+        "target": "self",
+        "amount": 12,
+        "uses_build_buff": true,
+        "bypass_animation": true,
+        "delay_seconds": 0.75
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148906",
+    "source_name": "Hail Storm",
+    "retheme_name": "Storm",
+    "magic_mayhem_reference": "Storm",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 14,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 14,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 18,
+    "bypass_wall": false,
+    "delay_seconds": 3.5,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 18,
+        "bypass_wall": false,
+        "delay_seconds": 3.5
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149107",
+    "source_name": "House",
+    "retheme_name": "Wizard’s Hut",
+    "magic_mayhem_reference": "Hermetic apprentice",
+    "cost_original": {
+      "bricks": 5,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 5,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "buildCastle",
+    "value": 5,
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "raise_castle",
+        "target": "self",
+        "amount": 5,
+        "uses_build_buff": true,
+        "delay_seconds": 0
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149008",
+    "source_name": "Knight",
+    "retheme_name": "Skeleton Knight",
+    "magic_mayhem_reference": "Skeleton",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 10,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 10,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 12,
+    "bypass_wall": false,
+    "delay_seconds": 3.4,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 12,
+        "bypass_wall": false,
+        "delay_seconds": 3.4
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149108",
+    "source_name": "Large Wall",
+    "retheme_name": "Iron Skin Rampart",
+    "magic_mayhem_reference": "Iron Skin",
+    "cost_original": {
+      "bricks": 14,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 14,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "buildWall",
+    "value": 20,
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "raise_wall",
+        "target": "self",
+        "amount": 20,
+        "uses_build_buff": true,
+        "bypass_animation": false,
+        "delay_seconds": 0
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148907",
+    "source_name": "Lightning",
+    "retheme_name": "Lightning",
+    "magic_mayhem_reference": "Lightning",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 20,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 20,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 22,
+    "bypass_wall": false,
+    "delay_seconds": 3.5,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 22,
+        "bypass_wall": false,
+        "delay_seconds": 3.5
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148908",
+    "source_name": "Mage",
+    "retheme_name": "Bind Neutral Circle",
+    "magic_mayhem_reference": "Place of Power",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 8,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 8,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "addWorker",
+    "value": [
+      0,
+      1,
+      0
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_worker",
+        "target": "self",
+        "amount": {
+          "law_circle": 0,
+          "neutral_circle": 1,
+          "chaos_circle": 0
+        }
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148909",
+    "source_name": "Magic Bricks",
+    "retheme_name": "Iron Skin Masonry",
+    "magic_mayhem_reference": "Iron Skin",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 16,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 16,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "addBuff",
+    "value": "build",
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_buff",
+        "target": "self",
+        "buff": "build"
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148910",
+    "source_name": "Magic Defence",
+    "retheme_name": "Magic Sphere",
+    "magic_mayhem_reference": "Magic Sphere",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 10,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 10,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "addBuff",
+    "value": "defence",
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_buff",
+        "target": "self",
+        "buff": "defence"
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148911",
+    "source_name": "Magic Weapons",
+    "retheme_name": "Bloodlust",
+    "magic_mayhem_reference": "Bloodlust",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 15,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 15,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "addBuff",
+    "value": "attack",
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_buff",
+        "target": "self",
+        "buff": "attack"
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148912",
+    "source_name": "Pixies",
+    "retheme_name": "Fountain of Life",
+    "magic_mayhem_reference": "Fountain of Life",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 18,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 18,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "buildCastle",
+    "value": 22,
+    "bypass_wall": true,
+    "delay_seconds": 1.0,
+    "effects": [
+      {
+        "op": "raise_castle",
+        "target": "self",
+        "amount": 22,
+        "uses_build_buff": true,
+        "delay_seconds": 1.0
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149009",
+    "source_name": "Platoon",
+    "retheme_name": "Faun Mob",
+    "magic_mayhem_reference": "Faun",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 7,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 7,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 9,
+    "bypass_wall": false,
+    "delay_seconds": 5.4,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 9,
+        "bypass_wall": false,
+        "delay_seconds": 5.4
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149010",
+    "source_name": "Protect Resources",
+    "retheme_name": "Portmanteau Seal",
+    "magic_mayhem_reference": "Portmanteau",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 4,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 4,
+      "ward_level": 0
+    },
+    "action": "addBuff",
+    "value": "resources",
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_buff",
+        "target": "self",
+        "buff": "resources"
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148913",
+    "source_name": "Quake",
+    "retheme_name": "Gorgon Shockwave",
+    "magic_mayhem_reference": "Gorgon Stare",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 24,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 24,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 27,
+    "bypass_wall": false,
+    "delay_seconds": 1.0,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 27,
+        "bypass_wall": false,
+        "delay_seconds": 1.0
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149205",
+    "source_name": "Ballista",
+    "retheme_name": "Centaur Ballista",
+    "magic_mayhem_reference": "Centaur / ranged mythic unit",
+    "cost_original": {
+      "bricks": 4,
+      "crystals": 0,
+      "swords": 4,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 4,
+      "neutral_mana": 0,
+      "chaos_mana": 4,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 8,
+    "bypass_wall": false,
+    "delay_seconds": 1.15,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 8,
+        "bypass_wall": false,
+        "delay_seconds": 1.15
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149011",
+    "source_name": "Recruit",
+    "retheme_name": "Bind Chaos Circle",
+    "magic_mayhem_reference": "Place of Power",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 8,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 8,
+      "ward_level": 0
+    },
+    "action": "addWorker",
+    "value": [
+      0,
+      0,
+      1
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_worker",
+        "target": "self",
+        "amount": {
+          "law_circle": 0,
+          "neutral_circle": 0,
+          "chaos_circle": 1
+        }
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148914",
+    "source_name": "Remove Bricks",
+    "retheme_name": "Drain Law Mana",
+    "magic_mayhem_reference": "Mana drain",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 5,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 5,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "removeResource",
+    "value": [
+      8,
+      0,
+      0
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 2,
+    "effects": [
+      {
+        "op": "remove_resource",
+        "target": "opponent",
+        "amount": {
+          "law": 8,
+          "neutral": 0,
+          "chaos": 0
+        },
+        "blocked_by_resource_protection": true
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148915",
+    "source_name": "Remove Crystals",
+    "retheme_name": "Drain Neutral Mana",
+    "magic_mayhem_reference": "Mana drain",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 5,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 5,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "removeResource",
+    "value": [
+      0,
+      8,
+      0
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 2,
+    "effects": [
+      {
+        "op": "remove_resource",
+        "target": "opponent",
+        "amount": {
+          "law": 0,
+          "neutral": 8,
+          "chaos": 0
+        },
+        "blocked_by_resource_protection": true
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149206",
+    "source_name": "Remove Resources",
+    "retheme_name": "Drain the Portmanteau",
+    "magic_mayhem_reference": "Portmanteau",
+    "cost_original": {
+      "bricks": 5,
+      "crystals": 5,
+      "swords": 5,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 5,
+      "neutral_mana": 5,
+      "chaos_mana": 5,
+      "ward_level": 0
+    },
+    "action": "removeResource",
+    "value": [
+      8,
+      8,
+      8
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 2,
+    "effects": [
+      {
+        "op": "remove_resource",
+        "target": "opponent",
+        "amount": {
+          "law": 8,
+          "neutral": 8,
+          "chaos": 8
+        },
+        "blocked_by_resource_protection": true
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "148916",
+    "source_name": "Remove Weapons",
+    "retheme_name": "Drain Chaos Mana",
+    "magic_mayhem_reference": "Mana drain",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 5,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 5,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "removeResource",
+    "value": [
+      0,
+      0,
+      8
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 2,
+    "effects": [
+      {
+        "op": "remove_resource",
+        "target": "opponent",
+        "amount": {
+          "law": 0,
+          "neutral": 0,
+          "chaos": 8
+        },
+        "blocked_by_resource_protection": true
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149109",
+    "source_name": "Reverse",
+    "retheme_name": "Reverse the Wards",
+    "magic_mayhem_reference": "Reverse spell motif",
+    "cost_original": {
+      "bricks": 3,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 4
+    },
+    "cost_retheme": {
+      "law_mana": 3,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 4
+    },
+    "action": "buildCastle",
+    "value": 8,
+    "bypass_wall": true,
+    "delay_seconds": 1,
+    "effects": [
+      {
+        "op": "raise_castle",
+        "target": "self",
+        "amount": 8,
+        "uses_build_buff": true,
+        "delay_seconds": 1
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149207",
+    "source_name": "Reward Workers",
+    "retheme_name": "Places of Power Surge",
+    "magic_mayhem_reference": "Places of Power",
+    "cost_original": {
+      "bricks": 1,
+      "crystals": 1,
+      "swords": 1,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 1,
+      "neutral_mana": 1,
+      "chaos_mana": 1,
+      "ward_level": 0
+    },
+    "action": "allProduce",
+    "value": "all",
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "set_next_production",
+        "target": "self",
+        "mode": "all"
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149012",
+    "source_name": "Roadblock",
+    "retheme_name": "Tangle Vine Blockade",
+    "magic_mayhem_reference": "Tangle Vine",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 8,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 8,
+      "ward_level": 0
+    },
+    "action": "allProduce",
+    "value": "none",
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "set_next_production",
+        "target": "opponent",
+        "mode": "none"
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149013",
+    "source_name": "Sabotage",
+    "retheme_name": "Gorgon Stare Sabotage",
+    "magic_mayhem_reference": "Gorgon Stare",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 10,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 10,
+      "ward_level": 0
+    },
+    "action": "sabotage",
+    "value": 0,
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "sabotage",
+        "target": "opponent",
+        "choice": "current_player_selects_1_card_from_opponent_hand_to_discard_to_deck",
+        "replacement_draw": 1
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149110",
+    "source_name": "School",
+    "retheme_name": "Hermetic Academy",
+    "magic_mayhem_reference": "Hermetic Academy",
+    "cost_original": {
+      "bricks": 30,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 30,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "addWorker",
+    "value": [
+      1,
+      1,
+      1
+    ],
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "add_worker",
+        "target": "self",
+        "amount": {
+          "law_circle": 1,
+          "neutral_circle": 1,
+          "chaos_circle": 1
+        }
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149111",
+    "source_name": "Tavern",
+    "retheme_name": "Yeoric’s Tavern",
+    "magic_mayhem_reference": "Yeoric / Fiddler’s Green",
+    "cost_original": {
+      "bricks": 12,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 12,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "buildCastle",
+    "value": 15,
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "raise_castle",
+        "target": "self",
+        "amount": 15,
+        "uses_build_buff": true,
+        "delay_seconds": 0
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149014",
+    "source_name": "Thief",
+    "retheme_name": "Seven-League Raid",
+    "magic_mayhem_reference": "Seven League Boots",
+    "cost_original": {
+      "bricks": 0,
+      "crystals": 0,
+      "swords": 17,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 0,
+      "neutral_mana": 0,
+      "chaos_mana": 17,
+      "ward_level": 0
+    },
+    "action": "thief",
+    "value": 0,
+    "bypass_wall": false,
+    "delay_seconds": 0,
+    "effects": [
+      {
+        "op": "thief",
+        "target": "opponent",
+        "amount_per_resource_max": 6,
+        "note": "TTS source gives thief resources before calling resource removal; decide explicitly whether to preserve or patch this quirk."
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149112",
+    "source_name": "Tower",
+    "retheme_name": "Merlin’s Tower",
+    "magic_mayhem_reference": "Merlin / Albion",
+    "cost_original": {
+      "bricks": 10,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 10,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "buildCastle",
+    "value": 10,
+    "bypass_wall": false,
+    "delay_seconds": 1.0,
+    "effects": [
+      {
+        "op": "raise_castle",
+        "target": "self",
+        "amount": 10,
+        "uses_build_buff": true,
+        "delay_seconds": 1.0
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149208",
+    "source_name": "Trojan Horse",
+    "retheme_name": "Labyrinth Breach",
+    "magic_mayhem_reference": "Crete / Labyrinth",
+    "cost_original": {
+      "bricks": 14,
+      "crystals": 0,
+      "swords": 20,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 14,
+      "neutral_mana": 0,
+      "chaos_mana": 20,
+      "ward_level": 0
+    },
+    "action": "attack",
+    "value": 28,
+    "bypass_wall": true,
+    "delay_seconds": 8.5,
+    "effects": [
+      {
+        "op": "damage",
+        "target": "opponent",
+        "amount": 28,
+        "bypass_wall": true,
+        "delay_seconds": 8.5
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149113",
+    "source_name": "Wain",
+    "retheme_name": "Grail Transfer",
+    "magic_mayhem_reference": "Grail",
+    "cost_original": {
+      "bricks": 10,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 10,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "wain",
+    "value": 6,
+    "bypass_wall": true,
+    "delay_seconds": 4.4,
+    "effects": [
+      {
+        "op": "wain",
+        "target": "opponent",
+        "amount": 6,
+        "description": "After delay, deal direct castle damage equal to value, then raise own castle by value."
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  },
+  {
+    "id": "149114",
+    "source_name": "Wall",
+    "retheme_name": "Warding Circle",
+    "magic_mayhem_reference": "Ward",
+    "cost_original": {
+      "bricks": 4,
+      "crystals": 0,
+      "swords": 0,
+      "wall": 0
+    },
+    "cost_retheme": {
+      "law_mana": 4,
+      "neutral_mana": 0,
+      "chaos_mana": 0,
+      "ward_level": 0
+    },
+    "action": "buildWall",
+    "value": 6,
+    "bypass_wall": false,
+    "delay_seconds": 1.5,
+    "effects": [
+      {
+        "op": "raise_wall",
+        "target": "self",
+        "amount": 6,
+        "uses_build_buff": true,
+        "bypass_animation": false,
+        "delay_seconds": 1.5
+      }
+    ],
+    "implementation_status": "mechanic_exact_retheme_name_placeholder_art"
+  }
+]
