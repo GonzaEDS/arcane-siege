@@ -2340,14 +2340,27 @@ input[type='range'] {
     min-height: 100%;
   }
   /* No horizontal page scroll on phones (zones scroll within themselves). */
+  html,
   body {
     overflow-x: hidden;
+    max-width: 100%;
   }
 
   .game {
     height: auto;
     min-height: 100dvh;
     overflow: visible;
+  }
+
+  /* Keep flex/grid zones from forcing the page wider than the screen. */
+  .board,
+  .status-bar,
+  .duel-table,
+  .duel-center,
+  .duel-wz,
+  .hand-zone {
+    min-width: 0;
+    max-width: 100%;
   }
 
   /* Setup menu: full-width card, stacked fields, scrolls from the top. */
@@ -2389,6 +2402,8 @@ input[type='range'] {
     grid-template-rows: auto auto auto auto;
     gap: 10px;
     padding: 8px 10px;
+    /* Keep the table backdrop covering the screen as you scroll the board. */
+    background-attachment: fixed;
   }
 
   /* Duel: the two wizards share a row; the spell focus + log sit beneath. */
