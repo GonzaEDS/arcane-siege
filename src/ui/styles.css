@@ -2396,6 +2396,21 @@ input[type='range'] {
 
   /* Hand and status bars scroll sideways instead of being clipped. */
   .hand { justify-content: flex-start; }
+
+  /* Slightly smaller cards on phones so more of the hand is visible. */
+  .card,
+  .card-back {
+    width: 124px;
+    min-height: 188px;
+  }
+  .card-compact,
+  .card-back-small {
+    width: 118px;
+    min-height: 180px;
+  }
+  .card-art { height: 60px; }
+  .card-name { font-size: 12px; }
+  .card-text { font-size: 10.5px; }
 }
 
 /* --------------------------- Reduced motion ----------------------------- */
