@@ -29,12 +29,15 @@ export function WizardView({
   citadelPulse,
   wardPulse,
   position,
+  castKey,
 }: {
   player: PlayerState;
   citadelPulse?: CWPulse;
   wardPulse?: CWPulse;
   /** Screen side; the right-hand wizard is mirrored so both face center. */
   position: 'left' | 'right';
+  /** Changes when this wizard casts, triggering a one-shot cast animation. */
+  castKey?: number;
 }) {
   const [failed, setFailed] = useState(false);
   const eTier = essenceTier(player.citadel);
@@ -63,8 +66,8 @@ export function WizardView({
       </div>
 
       <div
-        className={`wz-stage ${citadelPulse ? `wz-pulse-${citadelPulse.type}` : ''} ${wardPulse ? `wz-aegis-pulse-${wardPulse.type}` : ''}`}
-        key={`${citadelPulse?.key ?? 'c'}-${wardPulse?.key ?? 'w'}`}
+        className={`wz-stage ${citadelPulse ? `wz-pulse-${citadelPulse.type}` : ''} ${wardPulse ? `wz-aegis-pulse-${wardPulse.type}` : ''} ${castKey != null ? `wz-casting-${position}` : ''}`}
+        key={`${citadelPulse?.key ?? 'c'}-${wardPulse?.key ?? 'w'}-${castKey ?? 'x'}`}
       >
         <div className="wz-figure">
           {hasWizard ? (

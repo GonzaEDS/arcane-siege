@@ -11,6 +11,7 @@ import { Board, type Mode } from './components/Board';
 import { DeckBuilder } from './components/DeckBuilder';
 import { AudioControls } from './components/AudioControls';
 import { VictoryOverlay } from './components/VictoryOverlay';
+import { HowToPlay } from './components/HowToPlay';
 import { hasArt, artUrl } from './art';
 
 const setupBg = hasArt('title-hero')
@@ -45,6 +46,7 @@ export function App() {
   const [discardMode, setDiscardMode] = useState(false);
   const [passGate, setPassGate] = useState<PlayerId | null>(null);
   const [builder, setBuilder] = useState<BuilderSeed | null>(null);
+  const [showHelp, setShowHelp] = useState(false);
 
   const debug = settings.debug;
   const reducedMotion = settings.reducedMotion;
@@ -165,9 +167,11 @@ export function App() {
 
   if (!state) {
     return (
-      <Setup
-        mode={mode}
-        setMode={setMode}
+      <>
+        {showHelp ? <HowToPlay onClose={() => setShowHelp(false)} /> : null}
+        <Setup
+          mode={mode}
+          setMode={setMode}
         deckA={deckA}
         setDeckA={setDeckA}
         deckB={deckB}
@@ -186,8 +190,10 @@ export function App() {
           const isCustom = !!customDecks[deckName];
           setBuilder({ name: isCustom ? deckName : '', deck: resolveDeck(deckName) });
         }}
-        onStart={startGame}
-      />
+          onStart={startGame}
+          onHelp={() => setShowHelp(true)}
+        />
+      </>
     );
   }
 
@@ -210,7 +216,10 @@ export function App() {
         settings={settings}
         update={update}
         onReset={game.reset}
+        onHelp={() => setShowHelp(true)}
       />
+
+      {showHelp ? <HowToPlay onClose={() => setShowHelp(false)} /> : null}
 
       {game.error ? (
         <div className="error-banner" role="alert">
@@ -263,6 +272,7 @@ function Header({
   settings,
   update,
   onReset,
+  onHelp,
 }: {
   state: GameState | null;
   mode: Mode;
@@ -273,6 +283,7 @@ function Header({
   settings: SettingsType;
   update: (patch: Partial<SettingsType>) => void;
   onReset: () => void;
+  onHelp: () => void;
 }) {
   return (
     <header className="app-header">
@@ -282,6 +293,9 @@ function Header({
       </div>
       <div className="header-controls">
         <AudioControls settings={settings} update={update} compact />
+        <button type="button" className="icon-btn" onClick={onHelp} title="How to play" aria-label="How to play">
+          ?
+        </button>
         <span className="mode-tag">{MODE_LABEL[mode]}</span>
         {debug && state ? <code className="seed-tag">rng {state.rngState}</code> : null}
         <label className="toggle">
@@ -319,6 +333,7 @@ function Setup(props: {
   onNewDeck: () => void;
   onEditDeck: (deckName: string) => void;
   onStart: () => void;
+  onHelp: () => void;
 }) {
   const {
     mode,
@@ -339,6 +354,7 @@ function Setup(props: {
     onNewDeck,
     onEditDeck,
     onStart,
+    onHelp,
   } = props;
 
   const labelA = mode === 'ai' ? 'Your deck' : 'Wizard A deck';
@@ -443,6 +459,10 @@ function Setup(props: {
 
         <button type="button" className="btn btn-primary btn-start" onClick={onStart}>
           Begin the siege
+        </button>
+
+        <button type="button" className="btn btn-help-link" onClick={onHelp}>
+          How to play
         </button>
       </div>
     </div>

@@ -137,6 +137,7 @@ export function Board({
             position="left"
             citadelPulse={presentation.pulses.A.citadel}
             wardPulse={presentation.pulses.A.ward}
+            castKey={presentation.lastCast?.caster === 'A' ? presentation.lastCast.key : undefined}
           />
         </div>
 
@@ -166,6 +167,7 @@ export function Board({
             position="right"
             citadelPulse={presentation.pulses.B.citadel}
             wardPulse={presentation.pulses.B.ward}
+            castKey={presentation.lastCast?.caster === 'B' ? presentation.lastCast.key : undefined}
           />
         </div>
       </section>

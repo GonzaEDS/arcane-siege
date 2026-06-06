@@ -156,6 +156,16 @@ const WIZARD_JOBS = [
   },
 ];
 
+// App icon / logo mark (also the source for favicon + apple-touch + OG image).
+const ICON_JOBS = [
+  {
+    id: 'app-icon',
+    aspect: '1:1',
+    prompt:
+      'App icon logo mark: an ornate aged-bronze arcane medallion bearing a triad of three gemstones — cool moonlit blue, ochre, and ember red — set within a glowing engraved ring, on a deep near-black background. Bold, clean, centered, symmetrical, readable at small sizes. Retro dark fantasy, hand-painted, no text, no letters.',
+  },
+];
+
 // Non-card assets that benefit from generation.
 const EXTRA_JOBS = [
   {
@@ -190,5 +200,5 @@ export async function buildJobs() {
     aspect: '3:2',
     prompt: cardPrompt(card),
   }));
-  return [...cardJobs, ...EXTRA_JOBS, ...EMBLEM_JOBS, ...TEXTURE_JOBS, ...WIZARD_JOBS];
+  return [...cardJobs, ...EXTRA_JOBS, ...EMBLEM_JOBS, ...TEXTURE_JOBS, ...WIZARD_JOBS, ...ICON_JOBS];
 }
