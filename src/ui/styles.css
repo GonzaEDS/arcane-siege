@@ -2339,11 +2339,38 @@ input[type='range'] {
     height: auto;
     min-height: 100%;
   }
+  /* No horizontal page scroll on phones (zones scroll within themselves). */
+  body {
+    overflow-x: hidden;
+  }
 
   .game {
     height: auto;
     min-height: 100dvh;
     overflow: visible;
+  }
+
+  /* Setup menu: full-width card, stacked fields, scrolls from the top. */
+  .setup {
+    padding: 12px;
+    align-items: start;
+  }
+  .setup-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 16px;
+  }
+  .setup-title {
+    font-size: 30px;
+  }
+  .seg {
+    flex-wrap: wrap;
+  }
+  .setup-decks {
+    grid-template-columns: 1fr;
+  }
+  .audio-full {
+    grid-template-columns: 1fr;
   }
 
   .app-header {
