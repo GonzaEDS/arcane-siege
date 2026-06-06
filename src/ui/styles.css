@@ -2328,6 +2328,76 @@ input[type='range'] {
   }
 }
 
+/* -------------------------------- Mobile -------------------------------- */
+/* Phones / narrow windows only (desktop ≥ 821px is untouched). The board is
+   viewport-locked on desktop; on mobile we unlock it so the page scrolls, and
+   we stack the duel (both wizards on top, spell focus below). */
+@media (max-width: 820px) {
+  html,
+  body,
+  #root {
+    height: auto;
+    min-height: 100%;
+  }
+
+  .game {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .app-header {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  .header-controls {
+    gap: 10px 12px;
+    flex-wrap: wrap;
+  }
+
+  .board {
+    height: auto;
+    overflow: visible;
+    grid-template-rows: auto auto auto auto;
+    gap: 10px;
+    padding: 8px 10px;
+  }
+
+  /* Duel: the two wizards share a row; the spell focus + log sit beneath. */
+  .duel-table {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'wzl wzr'
+      'center center';
+    overflow: visible;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .duel-wz-left { grid-area: wzl; }
+  .duel-wz-right { grid-area: wzr; }
+  .duel-center { grid-area: center; }
+
+  .wizard-view { height: auto; }
+  .wz-stage {
+    flex: none;
+    height: 190px;
+  }
+  .wz-img {
+    height: auto;
+    max-height: 180px;
+  }
+
+  .last-cast { min-height: 160px; }
+  .duel-log {
+    max-height: 100px;
+    overflow-y: auto;
+  }
+
+  /* Hand and status bars scroll sideways instead of being clipped. */
+  .hand { justify-content: flex-start; }
+}
+
 /* --------------------------- Reduced motion ----------------------------- */
 
 :root[data-reduced-motion='true'] * {
