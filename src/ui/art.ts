@@ -14,7 +14,8 @@ export function hasArt(id: string): boolean {
 
 export function artUrl(id: string): string {
   // BASE_URL is '/' in dev and respects the configured base in builds.
-  return `${import.meta.env.BASE_URL}art/${id}.png`;
+  // We ship optimized WebP (raw PNGs stay out of the repo).
+  return `${import.meta.env.BASE_URL}art/${id}.webp`;
 }
 
 export function hasVideo(id: string): boolean {

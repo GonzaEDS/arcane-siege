@@ -6,15 +6,10 @@ dist-ssr
 .vite
 coverage
 
-# Generated FLUX art (regenerate with `npm run art`). The manifest in
-# src/ui/artManifest.json is committed; the UI falls back to SVG if a PNG
-# is missing, so the repo stays light.
+# Raw FLUX art stays out of the repo (large). We ship the optimized WebP
+# (run `npm run optimize` after `npm run art`), which IS committed and served.
 public/art/*.png
 public/art/*.jpg
 
-# Generated audio (SFX via ElevenLabs) and video (fal.ai). Regenerate with
-# `npm run sfx` / `npm run video`. Manifests are committed; UI degrades if
-# files are absent. Music (Suno) lives in public/audio/music and is committed.
-public/audio/sfx/*.mp3
-public/video/*.mp4
-public/video/*.webm
+# Generated SFX, music and the small video clips ARE committed so the deployed
+# app has them. Regenerate with `npm run sfx` / `npm run video`.

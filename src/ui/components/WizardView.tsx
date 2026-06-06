@@ -4,6 +4,7 @@
 // figure reacts to value tiers and to damage/build pulses; the Aegis bubble
 // scales with the ward and flares when struck.
 
+import { useState } from 'react';
 import type { PlayerState } from '../../engine';
 import type { CWPulse } from '../usePresentationEvents';
 import { hasArt, artUrl } from '../art';
@@ -35,10 +36,11 @@ export function WizardView({
   /** Screen side; the right-hand wizard is mirrored so both face center. */
   position: 'left' | 'right';
 }) {
+  const [failed, setFailed] = useState(false);
   const eTier = essenceTier(player.citadel);
   const aTier = aegisTier(player.ward);
   const artId = `wizard-${player.id.toLowerCase()}`;
-  const hasWizard = hasArt(artId);
+  const hasWizard = hasArt(artId) && !failed;
 
   return (
     <div
@@ -66,7 +68,7 @@ export function WizardView({
       >
         <div className="wz-figure">
           {hasWizard ? (
-            <img className="wz-img" src={artUrl(artId)} alt="" />
+            <img className="wz-img" src={artUrl(artId)} alt="" onError={() => setFailed(true)} />
           ) : (
             <svg className="wz-img wz-img-fallback" viewBox="0 0 100 140" aria-hidden>
               <path d="M50 14 q-16 0 -16 20 q0 10 6 16 l-14 70 h48 l-14 -70 q6 -6 6 -16 q0 -20 -16 -20Z" fill="currentColor" />
