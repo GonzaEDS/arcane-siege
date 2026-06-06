@@ -2453,6 +2453,40 @@ input[type='range'] {
   .card-art { height: 60px; }
   .card-name { font-size: 12px; }
   .card-text { font-size: 10.5px; }
+
+  /* Prioritize the player's resources: let the status bar wrap so mana,
+     circles and empowerments are all visible without sideways scrolling.
+     Essence/Aegis are already shown large under each wizard, so drop the
+     duplicate chips here, and slim down the Portmanteau. */
+  .player-panel {
+    flex-wrap: wrap;
+    height: auto;
+    overflow-x: visible;
+    row-gap: 6px;
+    column-gap: 12px;
+  }
+  .pp-vitals {
+    display: none;
+  }
+  .portmanteau {
+    padding: 4px 6px;
+    gap: 4px;
+    align-self: stretch;
+  }
+  .pm-case {
+    width: 26px;
+    height: 26px;
+  }
+  .pm-return {
+    min-width: 34px;
+  }
+  .pm-return-ring {
+    width: 16px;
+    height: 16px;
+  }
+  .pm-label {
+    display: none;
+  }
 }
 
 /* --------------------------- Reduced motion ----------------------------- */
