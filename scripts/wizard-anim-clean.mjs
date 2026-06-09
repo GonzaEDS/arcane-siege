@@ -18,10 +18,11 @@ const TMP_DIR = path.join(ROOT, '.tmp-frames');
 const OUT_DIR = path.join(ROOT, 'public/art');
 
 function parseArgs(argv) {
-  const a = { peel: 2, white: 238, fps: 8, width: 420, out: 'wizard-a-idle', limit: null };
+  const a = { erode: 2, peel: 1, white: 236, fps: 8, width: 420, out: 'wizard-a-idle', limit: null };
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i];
-    if (k === '--peel') a.peel = parseInt(argv[++i], 10);
+    if (k === '--erode') a.erode = parseInt(argv[++i], 10);
+    else if (k === '--peel') a.peel = parseInt(argv[++i], 10);
     else if (k === '--white') a.white = parseInt(argv[++i], 10);
     else if (k === '--fps') a.fps = parseInt(argv[++i], 10);
     else if (k === '--width') a.width = parseInt(argv[++i], 10);
@@ -31,22 +32,56 @@ function parseArgs(argv) {
   return a;
 }
 
-/** Clear edge pixels that are nearly pure white (leftover background fringe). */
-async function defringe(buf, peel, whiteCut) {
+/** Separable morphological erosion of the alpha channel by `r` pixels.
+ *  Removes the feathered background halo regardless of its colour. */
+function erodeAlpha(data, width, height, channels, r) {
+  if (r <= 0) return;
+  const n = width * height;
+  const a0 = new Uint8Array(n);
+  for (let i = 0; i < n; i++) a0[i] = data[i * channels + 3];
+
+  const tmp = new Uint8Array(n);
+  for (let y = 0; y < height; y++) {
+    const row = y * width;
+    for (let x = 0; x < width; x++) {
+      let m = 255;
+      for (let dx = -r; dx <= r; dx++) {
+        const xx = x + dx;
+        const v = xx < 0 || xx >= width ? 0 : a0[row + xx];
+        if (v < m) m = v;
+      }
+      tmp[row + x] = m;
+    }
+  }
+  for (let x = 0; x < width; x++) {
+    for (let y = 0; y < height; y++) {
+      let m = 255;
+      for (let dy = -r; dy <= r; dy++) {
+        const yy = y + dy;
+        const v = yy < 0 || yy >= height ? 0 : tmp[yy * width + x];
+        if (v < m) m = v;
+      }
+      data[(y * width + x) * channels + 3] = m;
+    }
+  }
+}
+
+async function defringe(buf, { erode, peel, white }) {
   const { data, info } = await sharp(buf).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const { width, height, channels } = info;
-  const A = (x, y) => data[(y * width + x) * channels + 3];
 
+  // 1. Erode the matte to drop the soft halo.
+  erodeAlpha(data, width, height, channels, erode);
+
+  // 2. Peel any remaining pure-white opaque edge pixels.
+  const A = (x, y) => data[(y * width + x) * channels + 3];
   for (let it = 0; it < peel; it++) {
     const clear = [];
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
         const i = (y * width + x) * channels;
         if (data[i + 3] === 0) continue;
-        const r = data[i];
-        const g = data[i + 1];
-        const b = data[i + 2];
-        if (!(r >= whiteCut && g >= whiteCut && b >= whiteCut)) continue;
+        if (!(data[i] >= white && data[i + 1] >= white && data[i + 2] >= white)) continue;
         const edge =
           (x > 0 && A(x - 1, y) < 24) ||
           (x < width - 1 && A(x + 1, y) < 24) ||
@@ -72,12 +107,12 @@ async function main() {
 
   const width = args.width;
   const height = Math.round(width * (1660 / 1244));
-  console.log(`frames=${files.length} · peel=${args.peel} white>=${args.white} · ${width}x${height}\n`);
+  console.log(`frames=${files.length} · erode=${args.erode}px peel=${args.peel} white>=${args.white} · ${width}x${height}\n`);
 
   const buffers = [];
   for (let i = 0; i < files.length; i++) {
     const raw = await readFile(path.join(TMP_DIR, files[i]));
-    const cleaned = await defringe(raw, args.peel, args.white);
+    const cleaned = await defringe(raw, args);
     const norm = await sharp(cleaned)
       .resize(width, height, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
       .png()
