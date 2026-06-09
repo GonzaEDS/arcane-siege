@@ -9,6 +9,10 @@ import type { PlayerState } from '../../engine';
 import type { CWPulse } from '../usePresentationEvents';
 import { hasArt, artUrl } from '../art';
 
+// Wizards (by id, lowercased) that have a looping idle animation (an animated
+// WebP at art/wizard-<id>-idle.webp). Falls back to the static cutout.
+const ANIMATED_WIZARDS = new Set(['a']);
+
 function essenceTier(v: number): string {
   if (v <= 0) return 'fallen';
   if (v < 30) return 'wounded';
@@ -40,14 +44,17 @@ export function WizardView({
   castKey?: number;
 }) {
   const [failed, setFailed] = useState(false);
+  const [idleFailed, setIdleFailed] = useState(false);
   const eTier = essenceTier(player.citadel);
   const aTier = aegisTier(player.ward);
-  const artId = `wizard-${player.id.toLowerCase()}`;
+  const id = player.id.toLowerCase();
+  const artId = `wizard-${id}`;
+  const hasIdle = ANIMATED_WIZARDS.has(id) && !idleFailed;
   const hasWizard = hasArt(artId) && !failed;
 
   return (
     <div
-      className={`wizard-view wz-${position} wz-${player.id.toLowerCase()} wz-e-${eTier} wz-a-${aTier} ${position === 'right' ? 'wz-flip' : ''}`}
+      className={`wizard-view wz-${position} wz-${id} wz-e-${eTier} wz-a-${aTier} ${position === 'right' ? 'wz-flip' : ''} ${hasIdle ? 'wz-animated' : ''}`}
       aria-label={`${player.name}: Essence ${player.citadel}, Aegis ${player.ward}`}
     >
       <div className="wz-floats" aria-hidden>
@@ -70,7 +77,9 @@ export function WizardView({
         key={`${citadelPulse?.key ?? 'c'}-${wardPulse?.key ?? 'w'}-${castKey ?? 'x'}`}
       >
         <div className="wz-figure">
-          {hasWizard ? (
+          {hasIdle ? (
+            <img className="wz-img" src={artUrl(`${artId}-idle`)} alt="" onError={() => setIdleFailed(true)} />
+          ) : hasWizard ? (
             <img className="wz-img" src={artUrl(artId)} alt="" onError={() => setFailed(true)} />
           ) : (
             <svg className="wz-img wz-img-fallback" viewBox="0 0 100 140" aria-hidden>

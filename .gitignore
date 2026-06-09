@@ -6,6 +6,10 @@ dist-ssr
 .vite
 coverage
 
+# Source animation frames + scratch (large; the built webp is what we ship)
+frames_8fps/
+.tmp-frames/
+
 # Raw FLUX art stays out of the repo (large). We ship the optimized WebP
 # (run `npm run optimize` after `npm run art`), which IS committed and served.
 public/art/*.png

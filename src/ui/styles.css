@@ -1097,6 +1097,10 @@ input[type='range'] {
   animation-duration: 5.3s;
   animation-delay: 0.7s;
 }
+/* When a real frame animation plays, drop the CSS breathing (avoid double bob). */
+.wz-animated .wz-figure {
+  animation: none;
+}
 @keyframes wz-breathe {
   0%, 100% { transform: translateY(0) scale(1, 1); }
   50% { transform: translateY(-1.5px) scale(1.006, 1.014); }
