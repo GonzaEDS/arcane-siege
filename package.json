@@ -16,7 +16,8 @@
     "video": "node --env-file=src/.env.local scripts/generate-video.mjs",
     "cutout": "node --env-file=src/.env.local scripts/cutout.mjs",
     "optimize": "node scripts/optimize-art.mjs",
-    "wizard-anim": "node --env-file=src/.env.local scripts/wizard-anim.mjs"
+    "wizard-anim": "node --env-file=src/.env.local scripts/wizard-anim.mjs",
+    "wizard-clean": "node scripts/wizard-anim-clean.mjs"
   },
   "engines": {
     "node": ">=20"
