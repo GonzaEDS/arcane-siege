@@ -18,12 +18,13 @@ const TMP_DIR = path.join(ROOT, '.tmp-frames');
 const OUT_DIR = path.join(ROOT, 'public/art');
 
 function parseArgs(argv) {
-  const a = { erode: 2, peel: 1, white: 236, fps: 8, width: 420, out: 'wizard-a-idle', limit: null };
+  const a = { erode: 2, peel: 3, white: 228, soft: 216, fps: 8, width: 420, out: 'wizard-a-idle', limit: null };
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i];
     if (k === '--erode') a.erode = parseInt(argv[++i], 10);
     else if (k === '--peel') a.peel = parseInt(argv[++i], 10);
     else if (k === '--white') a.white = parseInt(argv[++i], 10);
+    else if (k === '--soft') a.soft = parseInt(argv[++i], 10);
     else if (k === '--fps') a.fps = parseInt(argv[++i], 10);
     else if (k === '--width') a.width = parseInt(argv[++i], 10);
     else if (k === '--out') a.out = argv[++i];
@@ -66,28 +67,40 @@ function erodeAlpha(data, width, height, channels, r) {
   }
 }
 
-async function defringe(buf, { erode, peel, white }) {
+async function defringe(buf, { erode, peel, white, soft }) {
   const { data, info } = await sharp(buf).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const { width, height, channels } = info;
+  const A = (x, y) => data[(y * width + x) * channels + 3];
+  // True only at the silhouette edge (a neighbour is (near-)transparent), so we
+  // never punch holes in interior highlights/runes.
+  const atEdge = (x, y) =>
+    (x > 0 && A(x - 1, y) < 24) ||
+    (x < width - 1 && A(x + 1, y) < 24) ||
+    (y > 0 && A(x, y - 1) < 24) ||
+    (y < height - 1 && A(x, y + 1) < 24) ||
+    (x > 0 && y > 0 && A(x - 1, y - 1) < 24) ||
+    (x < width - 1 && y > 0 && A(x + 1, y - 1) < 24) ||
+    (x > 0 && y < height - 1 && A(x - 1, y + 1) < 24) ||
+    (x < width - 1 && y < height - 1 && A(x + 1, y + 1) < 24);
 
   // 1. Erode the matte to drop the soft halo.
   erodeAlpha(data, width, height, channels, erode);
 
-  // 2. Peel any remaining pure-white opaque edge pixels.
-  const A = (x, y) => data[(y * width + x) * channels + 3];
+  // 2. Clear the whitish feather at the EDGE only (semi-transparent or opaque
+  //    near-white). Several passes so a multi-pixel halo peels away. Interior
+  //    light pixels (silver runes, hair highlights) are never touched.
   for (let it = 0; it < peel; it++) {
     const clear = [];
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
         const i = (y * width + x) * channels;
-        if (data[i + 3] === 0) continue;
-        if (!(data[i] >= white && data[i + 1] >= white && data[i + 2] >= white)) continue;
-        const edge =
-          (x > 0 && A(x - 1, y) < 24) ||
-          (x < width - 1 && A(x + 1, y) < 24) ||
-          (y > 0 && A(x, y - 1) < 24) ||
-          (y < height - 1 && A(x, y + 1) < 24);
-        if (edge) clear.push(i + 3);
+        const a = data[i + 3];
+        if (a === 0) continue;
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+        const whitish = (a < 255 && r >= soft && g >= soft && b >= soft) || (r >= white && g >= white && b >= white);
+        if (whitish && atEdge(x, y)) clear.push(i + 3);
       }
     }
     if (clear.length === 0) break;
@@ -107,7 +120,7 @@ async function main() {
 
   const width = args.width;
   const height = Math.round(width * (1660 / 1244));
-  console.log(`frames=${files.length} · erode=${args.erode}px peel=${args.peel} white>=${args.white} · ${width}x${height}\n`);
+  console.log(`frames=${files.length} · erode=${args.erode}px soft>=${args.soft} peel=${args.peel} white>=${args.white} · ${width}x${height}\n`);
 
   const buffers = [];
   for (let i = 0; i < files.length; i++) {
